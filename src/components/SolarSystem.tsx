@@ -2,8 +2,14 @@ import { useEffect } from 'react';
 
 const SolarSystem = () => {
   useEffect(() => {
-    // Load the solar system page in an iframe or redirect
-    window.location.href = '/solar/main.html';
+    // Open the standalone solar system page in a new tab to avoid
+    // React Router trying to match the path inside the SPA.
+    const url = '/solar/main.html';
+    const win = window.open(url, '_blank', 'noopener,noreferrer');
+    if (!win) {
+      // Fallback to full navigation if popup blocked
+      window.location.href = url;
+    }
   }, []);
 
   return (
