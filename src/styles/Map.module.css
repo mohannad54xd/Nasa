@@ -1,0 +1,35 @@
+.mapContainer {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.mapContainer :global(.leaflet-container) {
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+  background: transparent;
+}
+
+.mapContainer :global(.leaflet-control-container) {
+  position: absolute;
+  z-index: 1000;
+}
+
+.mapContainer :global(.leaflet-control-zoom) {
+  border: none !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px);
+}
+
+.mapContainer :global(.leaflet-control-zoom-in),
+.mapContainer :global(.leaflet-control-zoom-out) {
+  color: white !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.mapContainer :global(.leaflet-control-zoom-in:hover),
+.mapContainer :global(.leaflet-control-zoom-out:hover) {
+  background: rgba(255, 255, 255, 0.2) !important;
+}

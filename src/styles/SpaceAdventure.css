@@ -1,0 +1,56 @@
+.alien {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  transition: transform 0.3s;
+}
+
+.alien-boss {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  transition: transform 0.3s;
+}
+
+.laser {
+  position: absolute;
+  width: 4px;
+  height: 20px;
+  background: #2196F3;
+  border-radius: 2px;
+  box-shadow: 0 0 10px #2196F3;
+}
+
+.explosion {
+  position: absolute;
+  font-size: 40px;
+  transform: translate(-50%, -50%);
+  animation: explode 0.5s forwards;
+}
+
+@keyframes explode {
+  0% {
+    transform: scale(0.5) translate(-50%, -50%);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2) translate(-25%, -25%);
+    opacity: 0;
+  }
+}
+
+.rocket-flame {
+  animation: flicker 0.3s infinite;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.mini-rocket {
+  position: absolute;
+  width: 40px;
+  height: 60px;
+  transition: all 0.3s;
+}
